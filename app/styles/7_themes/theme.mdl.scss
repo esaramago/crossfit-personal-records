@@ -1,0 +1,24 @@
+/* ==========================================================================
+   # MATERIAL DESIGN LITE
+   ========================================================================== */
+
+/**
+ * Material Design Lite framwork resets based on a theme
+ */
+
+// Header
+.mdl-layout__header {
+    background-color: $color-main-500;
+}
+
+// Table
+.mdl-data-table {
+    width: 100%;
+}
+
+// Buttons
+.mdl-button--fixed {
+    position: fixed;
+    right: $spacing;
+    bottom: $spacing;
+}

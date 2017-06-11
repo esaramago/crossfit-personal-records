@@ -1,0 +1,19 @@
+/* ==========================================================================
+   # GRID
+   ========================================================================== */
+
+/**
+ * Grid base on CSS Grid
+ */
+
+.o-flexgrid {
+    display: flex;
+}
+.o-flexgrid--bottom {
+    align-items: flex-end;
+}
+
+
+.o-flexgrid__col--right {
+    margin-left: auto;
+}

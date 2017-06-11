@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>crossfit personal records2</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+    <div>
+        <!-- Always shows a header, even in smaller screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="app">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row u-padding-left">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Crossfit Personal Records</span>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div class="o-container">
+
+                    <h1 class="c-heading-1">My Personal Records</h1>
+
+                    <!--<div class="o-flexgrid o-flexgrid--bottom">
+                        <h1 class="c-heading-1">My Personal Records</h1>
+                        <div class="u-margin-bottom--half o-flexgrid__col--right">
+                            <button type="button">+ Add record</button>
+                        </div>
+                    </div>-->
+
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Exercise</th>
+                                <th>1RM(kg)</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Push Jerk</td>
+                                <td>50</td>
+                                <td>22/05/2017</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Colored FAB button -->
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed">
+                        <i class="material-icons">add</i>
+                    </button>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!--<script src="/bower_components/vue/dist/vue.min.js"></script>-->
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

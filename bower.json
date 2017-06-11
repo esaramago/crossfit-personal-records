@@ -1,0 +1,12 @@
+{
+  "name": "crossfit-personal-records2",
+  "private": true,
+  "dependencies": {
+    "vue": "^2.3.4",
+    "material-design-lite": "^1.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
