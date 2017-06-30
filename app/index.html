@@ -25,9 +25,9 @@
 </head>
 
 <body>
-    <div>
-        <!-- Always shows a header, even in smaller screens. -->
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="app">
+    <div id="app">
+
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row u-padding-left">
                     <!-- Title -->
@@ -46,12 +46,12 @@
                         </div>
                     </div>-->
 
-                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="table">
                         <thead>
                             <tr>
                                 <th class="mdl-data-table__cell--non-numeric">Exercise</th>
                                 <th>1RM(kg)</th>
-                                <th>Date</th>
+                                <th class="mdl-data-table__cell--non-numeric" colspan="2">Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,18 +59,44 @@
                                 <td class="mdl-data-table__cell--non-numeric">Push Jerk</td>
                                 <td>50</td>
                                 <td>22/05/2017</td>
+                                <td class="mdl-data-table__cell--non-numeric">
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" v-on:click="openModal">
+                                        <i class="material-icons">create</i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
 
                     <!-- Colored FAB button -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed" v-on:click="openModal">
                         <i class="material-icons">add</i>
                     </button>
 
                 </div>
             </main>
         </div>
+
+        <dialog class="mdl-dialog" v-bind:open="isModalOpen">
+            <h2 class="mdl-dialog__title">Add record</h2>
+            <div class="mdl-dialog__content">
+                <form>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="inputExercise">
+                        <label class="mdl-textfield__label" for="inputExercise">Exercise</label>
+                    </div>
+                    <div class="mdl-textfield mdl-textfield--sm mdl-textfield--centered mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight">
+                        <label class="mdl-textfield__label" for="inputWeight">Weight</label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                </form>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Add</button>
+                <button type="button" class="mdl-button close" v-on:click="closeModal">Cancel</button>
+            </div>
+        </dialog>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -95,7 +121,8 @@
     <script src="https://unpkg.com/vue"></script>
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/table.js"></script>
+    <script src="scripts/dialog.js"></script>
     <!-- endbuild -->
 </body>
 

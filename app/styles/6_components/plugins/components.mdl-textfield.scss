@@ -1,0 +1,23 @@
+// Width Small
+.mdl-textfield--sm {
+    .mdl-textfield__input,
+    .mdl-textfield__label {
+        width: 54px;
+    }
+}
+
+// Centered
+.mdl-textfield--centered {
+    text-align: center;
+    .mdl-textfield__input {
+        display: inline-block;
+    }
+    .mdl-textfield__label {
+        margin: auto;
+    }
+    .mdl-textfield__error {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}

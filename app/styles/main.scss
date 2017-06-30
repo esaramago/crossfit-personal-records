@@ -2,10 +2,13 @@
 
 @import '3_generic/*.scss';
 
-@import '4_objects/*.scss';
+@import '4_elements/*.scss';
 
-@import '5_components/*.scss';
+@import '5_objects/*.scss';
 
-@import '6_utilities/*.scss';
+@import '6_components/plugins/*.scss';
+@import '6_components/*.scss';
 
-@import '7_themes/*.scss';
+@import '7_utilities/*.scss';
+
+@import '8_themes/*.scss';
