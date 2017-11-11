@@ -1,15 +1,7 @@
 Vue.component("dialog-window", {
-    props: ["isModalOpen"],
-    methods: {
-        openModal() {
-            this.isModalOpen = true;
-        },
-        closeModal() {
-            this.isModalOpen = false;
-        }
-    },
+    props: ["is-dialog-open"],
     template: `
-        <dialog class="mdl-dialog" v-bind:open="isModalOpen">
+        <dialog class="mdl-dialog" v-bind:open="isDialogOpen">
             <h2 class="mdl-dialog__title">Add record</h2>
             <div class="mdl-dialog__content">
                 <form>
@@ -26,9 +18,14 @@ Vue.component("dialog-window", {
             </div>
             <div class="mdl-dialog__actions">
                 <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Add</button>
-                <button type="button" class="mdl-button close" v-on:click="closeModal">Cancel</button>
+                <button type="button" class="mdl-button close" v-on:click="closeDialog">Cancel</button>
             </div>
         </dialog>
     `,
+    methods: {
+        closeDialog() {
+            app.isDialogOpen = false;
+        }
+    }
 
 })

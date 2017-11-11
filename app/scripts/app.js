@@ -3,7 +3,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        isModalOpen: false,
+        isDialogOpen: false,
         exercises: [
             {
                 name: "Push Jerk",
