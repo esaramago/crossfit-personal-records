@@ -65,6 +65,8 @@
                         </tbody>
                     </table>
 
+<!-- <span>{{exercises}}</span> -->
+
                     <!-- Colored FAB button -->
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed">
                         <i class="material-icons">add</i>
@@ -74,8 +76,9 @@
             </main>
         </div>
 
-        <dialog-window :is-dialog-open="isDialogOpen"></dialog-window>
+        <dialog-window :is-dialog-open="isDialogOpen" :input-exercise="dialogInputs.exercise" :input-weight="dialogInputs.weight"></dialog-window>
     </div>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -97,6 +100,8 @@
 
     <!--<script src="/bower_components/vue/dist/vue.min.js"></script>-->
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     
     <!-- build:js scripts/main.js -->
     <script src="components/dialog-window.js"></script>
