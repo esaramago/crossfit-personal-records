@@ -1,20 +1,24 @@
 Vue.component("dialog-window", {
     props: [
-        "is-dialog-open",
-        "input-exercise",
-        "input-weight"
+        "is-dialog-open"
     ],
+    data() {
+        return {
+            inputExercise: "",
+            inputWeight: ""
+        }
+    },
     template: `
         <dialog class="mdl-dialog" v-bind:open="isDialogOpen">
             <h2 class="mdl-dialog__title">Add record</h2>
             <div class="mdl-dialog__content">
                 <form>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="inputExercise" v-on:input="validateInputs">
+                        <input class="mdl-textfield__input" type="text" id="inputExercise" v-model="inputExercise" v-on:input="validateInputs">
                         <label class="mdl-textfield__label" for="inputExercise">Exercise</label>
                     </div>
                     <div class="mdl-textfield mdl-textfield--sm mdl-textfield--centered mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-on:input="validateInputs">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-model="inputWeight" v-on:input="validateInputs">
                         <label class="mdl-textfield__label" for="inputWeight">Weight</label>
                         <span class="mdl-textfield__error">Input is not a number!</span>
                     </div>
@@ -31,9 +35,7 @@ Vue.component("dialog-window", {
             app.isDialogOpen = false;
         },
         validateInputs() {
-            debugger
-            console.log(app.inputExercise)
-            console.log(app.inputWeight)
+            console.log(this.inputExercise)
         }
     }
 

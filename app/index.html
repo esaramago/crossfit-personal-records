@@ -47,17 +47,12 @@
                     </div>-->
 
                     <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                        <colgroup>
-                            <col>
-                            <col>
-                            <col>
-                            <col width="55px">
-                        </colgroup>
                         <thead>
                             <tr>
                                 <th class="mdl-data-table__cell--non-numeric">Exercise</th>
                                 <th>1RM(kg)</th>
-                                <th class="mdl-data-table__cell--non-numeric" colspan="2">Date</th>
+                                <th class="mdl-data-table__cell--non-numeric">Date</th>
+                                <th class="o-cell--auto"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,7 +71,7 @@
             </main>
         </div>
 
-        <dialog-window :is-dialog-open="isDialogOpen" :input-exercise="dialogInputs.exercise" :input-weight="dialogInputs.weight"></dialog-window>
+        <dialog-window :is-dialog-open="isDialogOpen"></dialog-window>
     </div>
 
 
