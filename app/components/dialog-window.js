@@ -15,18 +15,18 @@ Vue.component("dialog-window", {
                 <div class="mdl-dialog__content">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="inputExercise" v-model="inputExercise" v-on:input="validateInputs">
+                            <input class="mdl-textfield__input" type="text" id="inputExercise" v-model="inputExercise">
                             <label class="mdl-textfield__label" for="inputExercise">Exercise</label>
                         </div>
                         <div class="mdl-textfield mdl-textfield--sm mdl-textfield--centered mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-model="inputWeight" v-on:input="validateInputs">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-model="inputWeight">
                             <label class="mdl-textfield__label" for="inputWeight">Weight</label>
                             <span class="mdl-textfield__error">Input is not a number!</span>
                         </div>
                     </form>
                 </div>
                 <div class="mdl-dialog__actions">
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>Add</button>
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on:click="addExercise">Add</button>
                     <button type="button" class="mdl-button close" v-on:click="closeDialog">Cancel</button>
                 </div>
             </div>
@@ -36,8 +36,25 @@ Vue.component("dialog-window", {
         closeDialog() {
             app.isDialogOpen = false;
         },
-        validateInputs() {
-            console.log(this.inputExercise)
+        addExercise() {
+            var numberRegex = /^\d+$/;
+            var isValid = true;
+            if (this.inputExercise == "") {
+                isValid = false;
+            }
+            if (!numberRegex.test(this.inputWeight)) {
+                isValid = false;
+            }
+
+            if (isValid) {
+                // TODO:
+                // save data
+                // send success mesage
+                this.closeDialog();
+            }
+            else {
+                alert("Preencha os campos corretamente")
+            }
         }
     }
 
