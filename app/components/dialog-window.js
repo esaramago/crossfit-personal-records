@@ -49,7 +49,7 @@ Vue.component("dialog-window", {
             if (isValid) {
                 // TODO:
                 // save data
-                // send success mesage
+                // send success message
                 this.closeDialog();
             }
             else {
