@@ -61,7 +61,7 @@
                     </table>
 
                     <!-- Colored FAB button -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-button--fixed" v-on:click="openDialog">
                         <i class="material-icons">add</i>
                     </button>
 
@@ -69,7 +69,7 @@
             </main>
         </div>
 
-        <dialog-window :is-dialog-open="isDialogOpen"></dialog-window>
+        <dialog-window :is-dialog-open="isDialogOpen" :name="dialogInputs.name" :weight="dialogInputs.weight"></dialog-window>
     </div>
 
 

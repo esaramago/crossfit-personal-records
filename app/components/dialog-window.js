@@ -1,13 +1,15 @@
 Vue.component("dialog-window", {
     props: [
-        "is-dialog-open"
+        "is-dialog-open",
+        "name",
+        "weight"
     ],
-    data() {
+    /* data() {
         return {
-            inputExercise: "",
-            inputWeight: ""
+            inputExercise: this.name,
+            inputWeight: this.weight
         }
-    },
+    }, */
     template: `
         <dialog class="mdl-dialog" v-bind:open="isDialogOpen">
             <div class="mdl-dialog__container">
@@ -15,11 +17,11 @@ Vue.component("dialog-window", {
                 <div class="mdl-dialog__content">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="inputExercise" v-model="inputExercise">
-                            <label class="mdl-textfield__label" for="inputExercise">Exercise</label>
+                            <input class="mdl-textfield__input" type="text" id="inputName" v-model="name">
+                            <label class="mdl-textfield__label" for="inputName">Name</label>
                         </div>
                         <div class="mdl-textfield mdl-textfield--sm mdl-textfield--centered mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-model="inputWeight">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="inputWeight" v-model="weight">
                             <label class="mdl-textfield__label" for="inputWeight">Weight</label>
                             <span class="mdl-textfield__error">Input is not a number!</span>
                         </div>
@@ -49,6 +51,7 @@ Vue.component("dialog-window", {
             if (isValid) {
                 // TODO:
                 // save data
+                // update table
                 // send success message
                 this.closeDialog();
             }
@@ -56,6 +59,11 @@ Vue.component("dialog-window", {
                 alert("Preencha os campos corretamente")
             }
         }
-    }
+    }/* ,
+    watch: {
+        name: function() {
+            debugger
+        }
+    } */
 
 })

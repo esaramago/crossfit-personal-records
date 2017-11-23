@@ -24,8 +24,14 @@ const app = new Vue({
     data: {
         isDialogOpen: false,
         dialogInputs: {
-            exercise: "ss",
-            weight: "ss"
+            name: "",
+            weight: ""
+        }
+    },
+    methods: {
+        openDialog() {
+            // opens dialog component
+            app.isDialogOpen = true;
         }
     }
 })
