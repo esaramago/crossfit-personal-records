@@ -19,17 +19,13 @@ Vue.component("table-row", {
 
             // get exercise data
             var exercise = this.exercise;
-            /* var name = exercise.name;
-            var date = exercise.date;
-            var reps = exercise.reps;
-            var weight = exercise.weight; */
-
             app.dialogInputs.name = exercise.name;
+            app.dialogInputs.date = exercise.date;
+            app.dialogInputs.reps = exercise.reps;
             app.dialogInputs.weight = exercise.weight;
 
-            //this.$emit("applied", name);
-
             app.openDialog();
+
         }
     }
 })

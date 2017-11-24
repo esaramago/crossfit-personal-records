@@ -25,6 +25,8 @@ const app = new Vue({
         isDialogOpen: false,
         dialogInputs: {
             name: "",
+            date: "",
+            reps: "",
             weight: ""
         }
     },
