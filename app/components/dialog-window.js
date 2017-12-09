@@ -32,7 +32,7 @@ Vue.component("dialog-window", {
                     </form>
                 </div>
                 <div class="mdl-dialog__actions">
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on:click="addExercise">Add</button>
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on:click="updateExercise()">Add</button>
                     <button type="button" class="mdl-button close" v-on:click="closeDialog">Cancel</button>
                 </div>
             </div>
@@ -42,7 +42,7 @@ Vue.component("dialog-window", {
         closeDialog() {
             app.isDialogOpen = false;
         },
-        addExercise() {
+        updateExercise() {
             var numberRegex = /^\d+$/;
             var isValid = true;
             if (this.name == "") {
@@ -54,7 +54,21 @@ Vue.component("dialog-window", {
 
             if (isValid) {
                 // TODO:
+
                 // save data
+                debugger
+
+
+                /*
+                // criar novo exercício
+                exercisesRef.push({
+                    "name": this.name,
+                    "weight": this.weight
+                }) */
+
+
+                //exercisesRef.child(0).remove()
+
                 // update table
                 // send success message
                 this.closeDialog();

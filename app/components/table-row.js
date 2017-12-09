@@ -12,6 +12,11 @@ Vue.component("table-row", {
                     <i class="material-icons">create</i>
                 </button>
             </td>
+            <td>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--icon" v-on:click="deleteExercise">
+                    <i class="material-icons">delete</i>
+                </button>
+            </td>
         </tr>
     `,
     methods: {
@@ -26,6 +31,11 @@ Vue.component("table-row", {
 
             app.openDialog();
 
+        },
+
+        deleteExercise() {
+            console.log("delete")
         }
+
     }
 })
