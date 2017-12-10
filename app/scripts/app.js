@@ -31,7 +31,7 @@ const app = new Vue({
         }
     },
     methods: {
-        openDialog() {
+        openDialog(exercise) {
             // opens dialog component
             app.isDialogOpen = true;
         }

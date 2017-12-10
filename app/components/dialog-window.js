@@ -14,6 +14,12 @@ Vue.component("dialog-window", {
             }
         }
     }, */
+    data() {
+        return {
+            numberRegex: /^\d+$/,
+            isValid: true
+        }
+    },
     template: `
         <dialog class="mdl-dialog" v-bind:open="isDialogOpen">
             <div class="mdl-dialog__container">
@@ -43,39 +49,47 @@ Vue.component("dialog-window", {
             app.isDialogOpen = false;
         },
         updateExercise() {
-            var numberRegex = /^\d+$/;
-            var isValid = true;
-            if (this.name == "") {
-                isValid = false;
+            if (name == "") {
+                this.isValid = false;
             }
-            if (!numberRegex.test(this.weight)) {
-                isValid = false;
+            if (!this.numberRegex.test(this.weight)) {
+                this.isValid = false;
             }
 
-            if (isValid) {
-                // TODO:
+            if (this.isValid) {
 
                 // save data
                 debugger
 
 
+
+                exercisesRef.push({
+                    name: this.dialogInputs.name
+                })
+
                 /*
                 // criar novo exercício
+                //app.$firebaseRefs.exercises.push({
                 exercisesRef.push({
-                    "name": this.name,
-                    "weight": this.weight
+                    name: this.name,
+                    weight: this.weight
                 }) */
-
 
                 //exercisesRef.child(0).remove()
 
-                // update table
+                
                 // send success message
+                
                 this.closeDialog();
             }
             else {
                 alert("Preencha os campos corretamente")
             }
+        },
+        createExercise() {
+            app.$firebaseRefs.exercises.push({
+                name: this.name
+            })
         }
     }
 
